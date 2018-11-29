@@ -10,73 +10,65 @@
 
   <header class="main-header container">
     <nav class="main-navigation">
-      <a href="index.html"><img src="" width="" height="" alt="Логотип GllacyShop"></a>
+      <a class="logo" href="index.html"><img src="" width="" height="" alt="Логотип GllacyShop"></a>
       <ul class="site-navigation">
         <li><a href="catalog.html">Каталог</a></li>
+        <ul class="site-navigation-submenu">
+          <li><a href="category.html">Новинки</a></li>
+          <li><a href="category.html">Сливочное</a></li>
+          <li><a href="category.html">Щербеты</a></li>
+          <li><a href="category.html">Фруктовый лед</a></li>
+          <li><a href="category.html">Мелорин</a></li>
+        </ul>
         <li><a href="delivery.html">Доставка</a></li>
         <li><a href="about.html">О компании</a></li>
       </ul>
     </nav>
 
-    <!-- Start Popup "Submenu" -->
-    <ul class="site-navigation-submenu">
-      <li><a href="category.html">Новинки</a></li>
-      <li><a href="category.html">Сливочное</a></li>
-      <li><a href="category.html">Щербеты</a></li>
-      <li><a href="category.html">Фруктовый лед</a></li>
-      <li><a href="category.html">Мелорин</a></li>
-    </ul>
-    <!-- End Popup "Submenu" -->
-
-    <button class="main-header-search">Search</button>
-
-    <!-- Start Popup "Search" -->
-    <form class="search-form">
-      <input type="text" name="search" placeholder="Что ищем?">
-    </form>
-    <!-- End Popup "Search" -->
+    <div class="main-header-search">
+      <button class="main-header-search-button">Search</button>
+      <form class="main-header-search-form">
+        <input type="text" name="search" placeholder="Что ищем?">
+      </form>
+    </div>
 
     <div class="user-navigation">
       <ul class="login">
         <li class="login-link">Вход</li>
       </ul>
+      <form class="login-form">
+        <input type="text" name="email" placeholder="Электронная почта">
+        <input type="text" name="password" placeholder="Пароль">
+        <button class="common-button" type="submit">Войти</button>
+        <a>Забыли пароль?</a>
+        <a>Новая регистрация</a>
+      </form>
     </div>
 
-    <!-- Start Popup "Login" -->
-    <form class="login-form">
-      <input type="text" name="email" placeholder="Электронная почта">
-      <input type="text" name="password" placeholder="Пароль">
-      <button type="submit">Войти</button>
-      <a>Забыли пароль?</a>
-      <a>Новая регистрация</a>
-    </form>
-    <!-- End Popup "Login" -->
-
-    <ul class="cart">
-      <li class="cart-item">Пусто</li>
-    </ul>
-
-    <!-- Start Popup "Cart" -->
-    <section class="modal-cart-items">
-      <h2 class="visually-hidden">Товары корзины</h2>
-      <div class="modal-cart-items-list">
-        <tr>
-          <td><span class="remove-cart-item">X</span></td>
-          <td class="cart-item-title"><span>Пломбир с апельсиновым джемом</span></td>
-          <td><span class="cart-item-weight">1,5</span><span>кг.</span><span>x</span><span class="cart-item-price">200</span><span>руб.</span></td>
-          <td><span class="cart-item-total-price">300</span><span>руб.</span></td>
-        </tr>
-        <tr>
-          <td><span class="remove-cart-item">X</span></td>
-          <td class="cart-item-title"><span>Клубничный пломбир с присыпкой из белого шоколада</span></td>
-          <td><span class="cart-item-weight">1,5</span><span>кг.</span><span>x</span><span class="cart-item-price">300</span><span>руб.</span></td>
-          <td><span class="cart-item-total-price">450</span><span>руб.</span></td>
-        </tr>
-      </div>
-      <p class="total-price"><span>Итого:</span><span class="total-price-summ">750</span><span>руб.</span></p>
-      <button type="submit">Оформить заказ</button>
-    </section>
-    <!-- End Popup "Cart" -->
+    <div class="cart">
+      <ul>
+        <li class="cart-item">Пусто</li>
+      </ul>
+      <section class="modal-cart-items">
+        <h2 class="visually-hidden">Товары корзины</h2>
+        <div class="modal-cart-items-list">
+          <tr>
+            <td><span class="remove-cart-item">X</span></td>
+            <td class="cart-item-title"><span>Пломбир с апельсиновым джемом</span></td>
+            <td><span class="cart-item-weight">1,5</span><span>кг.</span><span>x</span><span class="cart-item-price">200</span><span>руб.</span></td>
+            <td><span class="cart-item-total-price">300</span><span>руб.</span></td>
+          </tr>
+          <tr>
+            <td><span class="remove-cart-item">X</span></td>
+            <td class="cart-item-title"><span>Клубничный пломбир с присыпкой из белого шоколада</span></td>
+            <td><span class="cart-item-weight">1,5</span><span>кг.</span><span>x</span><span class="cart-item-price">300</span><span>руб.</span></td>
+            <td><span class="cart-item-total-price">450</span><span>руб.</span></td>
+          </tr>
+        </div>
+        <p class="total-price"><span>Итого:</span><span class="total-price-summ">750</span><span>руб.</span></p>
+        <button class="common-button" type="submit">Оформить заказ</button>
+      </section>
+    </div>
 
     <div class="main-header-info">
       <p>С 10 до 20, ежедневно</p>
@@ -105,7 +97,7 @@
 
       <p class="sort-title">Сортировка:</p>
       <h3 class="visually-hidden">Сортировка по категориям</h3>
-      <div>
+      <div class="sort-menu-item">
         <button class="sort-categories">по популярности</button>
         <select class="sort-categories-list">
           <option>по популярности</option>
@@ -117,65 +109,73 @@
 
       <p class="sort-title">Цена: 100 руб. - 500 руб.</p>
       <h3 class="visually-hidden">Сортировка по цене</h3>
-      <div class="slider-price">
-        <div class="slider-min"></div>
-        <div class="slider-max"></div>
+      <div class="sort-menu-item">
+        <div class="slider-price">
+          <div class="slider-min"></div>
+          <div class="slider-max"></div>
+        </div>
       </div>
 
       <p class="sort-title">Жирность:</p>
       <h3 class="visually-hidden">Сортировка по жирности</h3>
-      <ul class="sort-fat-content">
-        <li class="sort-fat-content-item">
-          <input type="checkbox">
-          <label>0%</label>
-        </li>
-        <li class="sort-fat-content-item">
-          <input type="checkbox">
-          <label>до 10%</label>
-        </li>
-        <li class="sort-fat-content-item">
-          <input type="checkbox">
-          <label>до 30%</label>
-        </li>
-        <li class="sort-fat-content-item">
-          <input type="checkbox">
-          <label>выше 30%</label>
-        </li>
-      </ul>
+      <div class="sort-menu-item">
+        <ul class="sort-fat-content">
+          <li class="sort-fat-content-item">
+            <input type="checkbox">
+            <label>0%</label>
+          </li>
+          <li class="sort-fat-content-item">
+            <input type="checkbox">
+            <label>до 10%</label>
+          </li>
+          <li class="sort-fat-content-item">
+            <input type="checkbox">
+            <label>до 30%</label>
+          </li>
+          <li class="sort-fat-content-item">
+            <input type="checkbox">
+            <label>выше 30%</label>
+          </li>
+        </ul>
+      </div>
 
       <p class="sort-title">Наполнители:</p>
       <h3 class="visually-hidden">Сортировка по наполнителям</h3>
-      <ul class="sort-filler">
-        <li class="sort-filler-item">
-          <input type="checkbox">
-          <label>шоколадные</label>
-        </li>
-        <li class="sort-filler-item">
-          <input type="checkbox">
-          <label>сахарные присыпки</label>
-        </li>
-        <li class="sort-filler-item">
-          <input type="checkbox">
-          <label>фрукты</label>
-        </li>
-        <li class="sort-filler-item">
-          <input type="checkbox">
-          <label>сиропы</label>
-        </li>
-        <li class="sort-filler-item">
-          <input type="checkbox">
-          <label>джемы</label>
-        </li>
-      </ul>
+      <div class="sort-menu-item">
+        <ul class="sort-filler">
+          <li class="sort-filler-item">
+            <input type="checkbox">
+            <label>шоколадные</label>
+          </li>
+          <li class="sort-filler-item">
+            <input type="checkbox">
+            <label>сахарные присыпки</label>
+          </li>
+          <li class="sort-filler-item">
+            <input type="checkbox">
+            <label>фрукты</label>
+          </li>
+          <li class="sort-filler-item">
+            <input type="checkbox">
+            <label>сиропы</label>
+          </li>
+          <li class="sort-filler-item">
+            <input type="checkbox">
+            <label>джемы</label>
+          </li>
+        </ul>
+      </div>
 
-      <button type="submit">Применить<button>
+      <div class="sort-menu-item">
+        <button class="sort-apply-button" type="submit">Применить<button>
+        </div>
       </form>
 
       <section class="product">
         <h2 class="visually-hidden">Продукты</h2>
 
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">310 &#8381;<span>/кг</span></p>
           </div>
@@ -183,7 +183,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">380 &#8381;<span>/кг</span></p>
           </div>
@@ -191,7 +191,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">355 &#8381;<span>/кг</span></p>
           </div>
@@ -199,7 +199,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">415 &#8381;<span>/кг</span></p>
           </div>
@@ -207,7 +207,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">325 &#8381;<span>/кг</span></p>
           </div>
@@ -215,7 +215,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">410 &#8381;<span>/кг</span></p>
           </div>
@@ -223,7 +223,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">375 &#8381;<span>/кг</span></p>
           </div>
@@ -231,7 +231,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">320 &#8381;<span>/кг</span></p>
           </div>
@@ -239,7 +239,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">440 &#8381;<span>/кг</span></p>
           </div>
@@ -247,7 +247,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">435 &#8381;<span>/кг</span></p>
           </div>
@@ -255,7 +255,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">355 &#8381;<span>/кг</span></p>
           </div>
@@ -263,7 +263,7 @@
           <a class="quick-view hidden" href="product-page.html">Быстрый просмотр</a>
         </div>
         <div class="product-item">
-          <div>
+          <div class="product-item-info">
             <img src="#">
             <p class="price">420 &#8381;<span>/кг</span></p>
           </div>
