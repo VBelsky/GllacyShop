@@ -13,7 +13,6 @@ body {
 
 a {
   color: #ffffff;
-  font-size: 16px;
   font-weight: 500;
   line-height: 18px;
   text-decoration: underline;
@@ -34,7 +33,7 @@ a.white-bg-link:active {
 }
 
 .visually-hidden {
-  position: absolute !important;
+  position: absolute;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   padding:0;
@@ -169,8 +168,8 @@ input::placeholder {
   padding-left: 15px;
 }
 
-a.user-navigation-remind-password,
-a.user-navigation-new-registration {
+.user-navigation-remind-password,
+.user-navigation-new-registration {
   color: #323232;
   font-size: 13px;
   line-height: 24px;
@@ -317,19 +316,19 @@ a.user-navigation-new-registration {
   background-size: cover;
 }
 
-p.price {
+.price {
   font-size: 45px;
   line-height: 45px;
   font-weight: 700;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
-p.price span {
+.price span {
   font-size: 30px;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
-a.product-item-title {
+.product-item-title {
   line-height: 22px;
 }
 
@@ -346,19 +345,23 @@ a.product-item-title {
   line-height: 30px;
 }
 
-p.features-item {
+.features-item {
   color: #323232;
 }
 
 .features {
   background-image: url("../img/wafer-background.jpg");
   background-color: #EDE1C7;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
 .announcement {
   background-image: url("../img/strawberry-background.jpg");
   background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -437,21 +440,25 @@ p.contact-info-data {
 
 a.twitter {
   background-image: url("../img/social-icon-twitter.svg");
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 a.instagram {
   background-image: url("../img/social-icon-instagram.svg");
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 a.facebook {
   background-image: url("../img/social-icon-facebook.svg");
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 a.vkontakte {
   background-image: url("../img/social-icon-vk.svg");
+  background-position: center;
   background-repeat: no-repeat;
 }
 
