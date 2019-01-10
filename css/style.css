@@ -188,7 +188,33 @@ input::placeholder {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 30px;
-  padding: 15px;
+  padding: 6px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search button {
+  padding: 7px;
+}
+
+.nav-button svg {
+  display: block;
+  width: 21px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.search-button svg {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.nav-button:hover path,
+.nav-button:hover polygon,
+.nav-button:hover circle {
+  fill: #000000;
 }
 
 .nav-button button:hover {
