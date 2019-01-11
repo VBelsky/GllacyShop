@@ -471,34 +471,49 @@ p.contact-info-data {
   padding: 0;
 }
 
-.footer-social a {
-  display: inline-block;
-  width: 37px;
-  height: 37px;
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #c2cec7;
+  border-radius: 50%;
+}
+
+.social-button::before {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background-color: #e6ebe9;
+  border-radius: 50%;
+}
+
+.social-button:hover::before {
+  background-color: #ffffff;
+}
+
+.social-button svg {
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+}
+
+.social-button path {
+  fill: #849d8f;
 }
 
 a.twitter {
-  background-image: url("../img/social-icon-twitter.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 a.instagram {
-  background-image: url("../img/social-icon-instagram.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 a.facebook {
-  background-image: url("../img/social-icon-facebook.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 a.vkontakte {
-  background-image: url("../img/social-icon-vk.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .footer-navigation a {
@@ -604,7 +619,9 @@ a.vkontakte {
   width: 100%;
   margin: 0 auto;
   padding: 0px 27px;
+}
 
+.container:first-child {
   background-image: url("../img/slider-icecream-1.png");
   background-repeat: no-repeat;
   background-position: top center;
@@ -950,6 +967,11 @@ a.vkontakte {
   margin: 0;
 }
 
+.footer-navigation {
+  width: 100%;
+  max-width: 340px;
+}
+
 .footer-navigation ul {
   display: flex;
   flex-direction: column;
@@ -958,15 +980,19 @@ a.vkontakte {
 }
 
 .footer-navigation li {
-  page-break-inside: avoid;
-  break-inside: avoid;
   padding-left: 20px;
+  position: relative;
 }
 
-.footer-navigation li:first-child {
+.footer-navigation li:first-child::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
   background-image: url("../img/icon-heart.svg");
   background-repeat: no-repeat;
-  background-position: left;
+  left: 0;
+  top: 5px;
 }
 
 .footer-copyright {
