@@ -298,8 +298,16 @@ input::placeholder {
   border-top: 1px solid #CACAC7;
 }
 
+.main-header-info {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  text-align: right;
+}
+
 .main-header-info p {
-  font-size: : 14px;
+  font-size: 14px;
   line-height: 16px;
   font-weight: 700;
 }
@@ -308,6 +316,7 @@ input::placeholder {
   font-size: 22px;
   line-height: 24px;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .feedback-form h3 {
@@ -377,11 +386,10 @@ input::placeholder {
 }
 
 .features {
-  background-image: url("../img/wafer-background.jpg");
+  background-image: url("../img/wafer-background-small.jpg");
   background-color: #EDE1C7;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
 }
 
 .announcement {
@@ -596,6 +604,10 @@ a.vkontakte {
   width: 100%;
   margin: 0 auto;
   padding: 0px 27px;
+
+  background-image: url("../img/slider-icecream-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 /* Временно скрываем */
@@ -603,7 +615,6 @@ a.vkontakte {
 .search-form,
 .user-navigation-modal,
 .modal-cart-items,
-.main-header-info,
 .feedback-form {
   display: none;
 }
@@ -611,7 +622,8 @@ a.vkontakte {
 .main-header {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 10px;
+  position: relative;
 }
 
 .main-navigation {
@@ -654,6 +666,7 @@ a.vkontakte {
   justify-content: center;
   height: 532px;
   margin-bottom: 42px;
+  position: relative;
 }
 
 .slider-item {
@@ -662,6 +675,29 @@ a.vkontakte {
 
 .slider-item h1 {
   width: 670px;
+}
+
+.slider-nav-button {
+  width: 22px;
+  height: 22px;
+  background-image: url("../img/slider-element-empty.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  margin-right: 8px;
+}
+
+.slider-nav-button.current-slide {
+  background-image: url("../img/slider-element-fill.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.slider-nav {
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .teasers {
@@ -782,10 +818,33 @@ a.vkontakte {
 }
 
 .features-item {
-  background-image: url("../img/icon-cow.svg");
-  background-repeat: no-repeat;
+  position: relative;
   padding: 13px 30px 9px 56px;
   margin: 0;
+}
+
+.features-item::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/icon-icecream.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.features-column:first-child .features-item:last-child::before {
+  background-image: url("../img/icon-leaf.svg");
+}
+
+.features-column:last-child .features-item:first-child::before {
+  background-image: url("../img/icon-cow.svg");
+}
+
+.features-column:last-child .features-item:last-child::before {
+  background-image: url("../img/icon-thermometer.svg");
 }
 
 .announcement-newsletter {
