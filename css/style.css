@@ -56,7 +56,12 @@ a.white-bg-link:active {
   display: inline-block;
 }
 
-.site-navigation a:hover {
+.site-navigation li {
+  position: relative;
+}
+
+.site-navigation a:hover,
+.site-navigation-submenu:hover + .site-navigation a {
   color: #333333;
   background-color: #f7f6f3;
   text-decoration: none;
@@ -81,11 +86,24 @@ a.white-bg-link:active {
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   width: 157px;
-  padding: 13px 0;
+  padding: 5px 0;
+  visibility: hidden;
+  position: absolute;
+  margin-top: 5px;
+  left: -5px;
+}
+
+.site-navigation a:hover + .site-navigation-submenu {
+  visibility: visible;
+}
+
+.site-navigation-submenu:hover {
+  visibility: visible;
 }
 
 .site-navigation-submenu li {
-  padding: 0 20px;
+  position: relative;
+  padding: 7px 20px;
 }
 
 .site-navigation-submenu a {
@@ -102,6 +120,9 @@ a.white-bg-link:active {
 
 .site-navigation-submenu li:first-child a {
   font-weight: 700;
+}
+
+.site-navigation-submenu li:first-child {
   border-bottom: 1px solid #D5D4D2;
 }
 
@@ -135,13 +156,16 @@ a.white-bg-link:active {
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   width: 341px;
+  visibility: hidden;
+  position: absolute;
 }
 
 .user-navigation-modal {
   width: 277px;
 }
 
-input {
+input,
+textarea {
   color: #323232;
   font-weight: 700;
   border: 1px solid #d3d3d2;
@@ -151,24 +175,37 @@ input {
   height: 44px;
   box-sizing: border-box;
   padding-left: 15px;
+  line-height: 42px;
 }
 
-input:hover {
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+input:hover,
+textarea:hover {
   border: 2px solid #9a9a9a;
   padding-left: 14px;
 }
 
-input:focus {
+textarea:hover,
+textarea:focus {
+  line-height: 40px;
+}
+
+input:focus,
+textarea:focus {
   outline: none;
   border: 2px solid #2e88e4;
   padding-left: 14px;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #999999;
   font-size: 14px;
   font-weight: 400;
-  line-height: 24px;
 }
 
 .user-navigation-remind-password,
@@ -179,7 +216,7 @@ input::placeholder {
   text-decoration: underline;
 }
 
-.nav-button button {
+.nav-menu-button {
   color: #ffffff;
   font-size: 14px;
   line-height: 16px;
@@ -194,8 +231,43 @@ input::placeholder {
   align-items: center;
 }
 
+.user-navigation-button:hover + .user-navigation-modal {
+  visibility: visible;
+  position: absolute;
+  margin-top: 5px;
+  right: 0;
+  z-index: 1;
+}
+
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-form p {
+  width: 100%;
+}
+
+.remind-password {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
 .search button {
   padding: 7px;
+}
+
+.search-button:hover + .search-form {
+  visibility: visible;
+  position: absolute;
+  margin-top: 5px;
+  right: 0;
+}
+
+.nav-button p {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .nav-button svg {
@@ -211,13 +283,13 @@ input::placeholder {
   height: 18px;
 }
 
-.nav-button:hover path,
-.nav-button:hover polygon,
-.nav-button:hover circle {
+.nav-menu-button:hover path,
+.nav-menu-button:hover polygon,
+.nav-menu-button:hover circle {
   fill: #000000;
 }
 
-.nav-button button:hover {
+.nav-menu-button:hover {
   color: #323232;
   background-color: #f8f7f4;
 }
@@ -235,6 +307,12 @@ input::placeholder {
   border-radius: 30px;
   display: inline-block;
   padding: 15px 25px;
+}
+
+.login-button {
+  display: block;
+  padding: 10px 25px;
+  margin-right: 20px;
 }
 
 .slider-order-button {
@@ -270,12 +348,55 @@ input::placeholder {
   line-height: 16px;
 }
 
+.cart-button:hover + .modal-cart-items {
+  visibility: visible;
+}
+
 .modal-cart-items {
-  padding: 20px 15px;
+  padding: 10px 15px 20px;
   border-radius: 5px;
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 539px;
+  width: 535px;
+  visibility: hidden;
+  position: absolute;
+  margin-top: 5px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-cart-items-list {
+  border-bottom: 1px solid #CACAC7;
+}
+
+.modal-cart-items-list td {
+  position: relative;
+  height: 50px;
+  padding-right: 15px;
+}
+
+.modal-cart-items-list td:last-child {
+  padding-right: 0px;
+}
+
+.modal-cart-item-title {
+  padding-left: 50px;
+  width: 250px;
+}
+
+.modal-cart-item-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background: url("../img/product-item-icecream-01.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .remove-cart-item {
@@ -295,7 +416,14 @@ input::placeholder {
   font-size: 15px;
   font-weight: 700;
   line-height: 18px;
-  border-top: 1px solid #CACAC7;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  align-self: flex-end;
+}
+
+.modal-cart-confirm {
+  padding: 10px 15px;
+  align-self: flex-end;
 }
 
 .main-header-info {
@@ -454,6 +582,41 @@ p.contact-info-data {
   border-radius: 10px;
   background-color: rgb(248, 247, 244);
   width: 478px;
+  visibility: hidden;
+  position: fixed;
+  top: 330px;
+  left: 50%;
+  margin-left: -279px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.feedback-form-overlay {
+  position: fixed;
+  visibility: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+.feedback-form h3,
+.feedback-form p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.feedback-form .common-button {
+  margin-left: auto;
+}
+
+.feedback-form input[type="text"] {
+  max-width: 270px;
+  width: 100%;
 }
 
 .close-modal {
@@ -463,6 +626,9 @@ p.contact-info-data {
   width: 11px;
   height: 11px;
   border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .footer-social,
@@ -627,15 +793,6 @@ a.vkontakte {
   background-position: top center;
 }
 
-/* Временно скрываем */
-.site-navigation-submenu,
-.search-form,
-.user-navigation-modal,
-.modal-cart-items,
-.feedback-form {
-  display: none;
-}
-
 .main-header {
   display: flex;
   align-items: center;
@@ -663,6 +820,7 @@ a.vkontakte {
 
 .nav-button {
   margin-right: 10px;
+  position: relative;
 }
 
 .nav-button.cart {
@@ -923,7 +1081,7 @@ a.vkontakte {
 .contacts {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   margin-bottom: 10px
 }
@@ -940,9 +1098,13 @@ a.vkontakte {
   object-fit: cover;
 }
 
-.contact-info {
+.container-contact {
   position: absolute;
-  right: 27px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .main-footer {

@@ -49,7 +49,7 @@
         </nav>
 
         <div class="nav-button search">
-          <button class="search-button" type="button">
+          <button class="nav-menu-button search-button" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px"
             height="17px" viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">
             <g id="Layer_1">
@@ -70,7 +70,7 @@
       </div>
 
       <div class="nav-button user-navigation">
-        <button class="user-navigation-button" type="button">
+        <button class="nav-menu-button user-navigation-button" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="21px" height="19px" viewBox="0 0 21 19" enable-background="new 0 0 21 19" xml:space="preserve">
           <image overflow="visible" width="21" height="19" xlink:href="img/icon-enter.svg" >
@@ -91,14 +91,16 @@
               <input id="login-password" type="password" name="password" placeholder="Пароль">
             </p>
             <button class="common-button login-button" type="submit">Войти</button>
+            <div class="remind-password">
+              <a class="user-navigation-remind-password" href="#" aria-label="Напомнить пароль">Забыли пароль?</a>
+              <a class="user-navigation-new-registration" href="#" aria-label="Зарегистрироваться">Новая регистрация</a>
+            </div>
           </form>
-          <a class="user-navigation-remind-password" href="#" aria-label="Напомнить пароль">Забыли пароль?</a>
-          <a class="user-navigation-new-registration" href="#" aria-label="Зарегистрироваться">Новая регистрация</a>
         </div>
       </div>
 
       <div class="nav-button cart">
-        <button class="cart-button" type="button">
+        <button class="nav-menu-button cart-button" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
           <g>
@@ -117,7 +119,7 @@
                 <td>
                   <button class="remove-cart-item" type="button" aria-label="Удалить из корзины"></button>
                 </td>
-                <td>Пломбир с апельсиновым джемом</td>
+                <td class="modal-cart-item-title">Пломбир с апельсиновым джемом</td>
                 <td>1,5 кг. x <span class="cart-item-price">200 руб.</span></td>
                 <td>300 руб.</td>
               </tr>
@@ -125,7 +127,7 @@
                 <td>
                   <button class="remove-cart-item" type="button" aria-label="Удалить из корзины"></button>
                 </td>
-                <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+                <td class="modal-cart-item-title">Клубничный пломбир с присыпкой из белого шоколада</td>
                 <td>1,5 кг. x <span class="cart-item-price">300 руб.</td>
                   <td>450 руб.</td>
                 </tr>
@@ -264,13 +266,15 @@
       <div class="contact-map">
         <img class="map" src="img/map.jpg" width="1250" height="640" alt="Карта">
       </div>
-      <div class="contact-info">
-        <p>Адрес главного офиса и офлайн магазина:</p>
-        <p class="contact-info-data">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
-        <p>Для заказов по телефону:</p>
-        <a class="white-bg-link"href="tel: +88124502525">8 812 450-25-25</a>
-        <p>(с 10 до 20 ежедневно)</p>
-        <button class="common-button" type="button">Форма обратной связи</button>
+      <div class="container-contact">
+        <div class="contact-info">
+          <p>Адрес главного офиса и офлайн магазина:</p>
+          <p class="contact-info-data">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+          <p>Для заказов по телефону:</p>
+          <a class="white-bg-link"href="tel: +88124502525">8 812 450-25-25</a>
+          <p>(с 10 до 20 ежедневно)</p>
+          <button class="common-button" type="button">Форма обратной связи</button>
+        </div>
       </div>
     </section>
 
@@ -340,11 +344,12 @@
           <input id="feedback-form-email" type="text" name="email" placeholder="Ваша почта для ответа">
         </p>
         <p>
-          <input id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь...">
+          <textarea id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь..."></textarea>
         </p>
         <button class="common-button" type="submit">Отправить</button>
         <button class="close-modal" type="button" label-aria="Закрыть модальное окно"></button>
       </form>
+      <div class="feedback-form-overlay"></div>
 
       <!-- Modal "Feedback" End -->
 
