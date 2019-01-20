@@ -9,6 +9,9 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+  <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+  <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+  <input class="visually-hidden" type="radio" id="product-3" name="toggle">
   <div class="bg-container">
     <div class="container home-page">
 
@@ -157,22 +160,22 @@
         <h1 class="visually-hidden">Магазин GllacyShop</h1>
 
         <section class="slider">
-          <div class="slider-item">
+          <div class="slider-item" id="slide-1">
             <h1>Крем-брюле и пломбир с малиновым джемом</h1>
             <button class="common-button slider-order-button" href="order.html">Давайте оба!</button>
           </div>
-          <div class="slider-item">
+          <div class="slider-item" id="slide-2">
             <h1>Шоколадный пломбир и лимонный сорбет</h1>
             <button class="common-button slider-order-button" href="order.html">Давайте оба!</button>
           </div>
-          <div class="slider-item">
+          <div class="slider-item" id="slide-3">
             <h1>Пломбир с помадкой и клубничный щербет</h1>
             <button class="common-button slider-order-button" href="order.html">Давайте оба!</button>
           </div>
           <div class="slider-nav">
-            <label class="slider-nav-button current-slide" aria-label="Первый слайд"></label>
-            <label class="slider-nav-button" aria-label="Второй слайд"></label>
-            <label class="slider-nav-button" aria-label="Третий слайд"></label>
+            <label for="product-1" class="slider-nav-button" aria-label="Первый слайд"></label>
+            <label for="product-2" class="slider-nav-button" aria-label="Второй слайд"></label>
+            <label for="product-3" class="slider-nav-button" aria-label="Третий слайд"></label>
           </div>
         </section>
 

@@ -104,12 +104,6 @@ textarea::placeholder {
   padding: 0px 27px;
 }
 
-.home-page {
-  background-image: url("../img/slider-icecream-1.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-}
-
 .main-header {
   display: flex;
   align-items: center;
@@ -532,11 +526,6 @@ tr:nth-child(2) .modal-cart-item-title::before {
   line-height: 28px;
 }
 
-.slider-item:nth-child(2),
-.slider-item:nth-child(3) {
-  display: none;
-}
-
 .slider {
   display: flex;
   justify-content: center;
@@ -547,6 +536,7 @@ tr:nth-child(2) .modal-cart-item-title::before {
 
 .slider-item {
   margin-top: auto;
+  display: none;
 }
 
 .slider-item h1 {
@@ -567,18 +557,61 @@ tr:nth-child(2) .modal-cart-item-title::before {
   margin-right: 8px;
 }
 
-.slider-nav-button.current-slide {
-  background-image: url("../img/slider-element-fill.png");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
 .slider-nav {
   position: absolute;
   left: 0;
   bottom: 25px;
   display: flex;
   justify-content: flex-start;
+}
+
+.bg-container {
+  background-color: #849d8f;
+  background-image: url("../img/slider-icecream-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.bg-container::before,
+.bg-container::after {
+  content: "";
+  visibility: hidden;
+}
+
+.bg-container::after {
+  background-image: url("../img/slider-icecream-2.png");
+}
+
+.bg-container::before {
+  background-image: url("../img/slider-icecream-3.png");
+}
+
+#product-1:checked ~ .bg-container {
+  background-color: #849d8f;
+  background-image: url("../img/slider-icecream-1.png");
+}
+
+#product-2:checked ~ .bg-container {
+  background-color: #8996a6;
+  background-image: url("../img/slider-icecream-2.png");
+}
+
+#product-3:checked ~ .bg-container {
+  background-color: #9d8b84;
+  background-image: url("../img/slider-icecream-3.png");
+}
+
+#product-1:checked ~ .bg-container #slide-1,
+#product-2:checked ~ .bg-container #slide-2,
+#product-3:checked ~ .bg-container #slide-3 {
+  display: block;
+}
+
+#product-1:checked ~ .bg-container label[for="product-1"],
+#product-2:checked ~ .bg-container label[for="product-2"],
+#product-3:checked ~ .bg-container label[for="product-3"] {
+  background-image: url("../img/slider-element-fill.png");
 }
 
 .teasers {
