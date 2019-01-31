@@ -267,6 +267,7 @@
     <!-- Map Start -->
 
     <section class="contacts">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d374988.71114173456!2d29.873312314273083!3d51.867448392992664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d5ea3b6afb23d7%3A0x937148dcf69fdefd!2z0KXQvtC50L3QuNC60Lg!5e0!3m2!1sru!2sby!4v1548971836066" width="100%" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
       <h2 class="visually-hidden">Контактная информация</h2>
       <div class="contact-map">
         <div class="container">
@@ -338,25 +339,26 @@
       <!-- Footer End -->
 
       <!-- Modal "Feedback" Start -->
-
-      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
-        <h3>Мы обязательно вам ответим!</h3>
-        <p>
-          <input id="feedback-form-name" type="text" name="name" placeholder="Как вас зовут?">
-        </p>
-        <p>
-          <input id="feedback-form-email" type="text" name="email" placeholder="Ваша почта для ответа">
-        </p>
-        <p>
-          <textarea id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь..."></textarea>
-        </p>
-        <button class="common-button" type="submit">Отправить</button>
-        <button class="close-modal" type="button" label-aria="Закрыть модальное окно"></button>
-      </form>
-      <div class="feedback-form-overlay"></div>
+      <div class="modal-feedback">
+        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+          <h3>Мы обязательно вам ответим!</h3>
+          <p>
+            <input id="feedback-form-name" type="text" name="name" placeholder="Как вас зовут?">
+          </p>
+          <p>
+            <input id="feedback-form-email" type="text" name="email" placeholder="Ваша почта для ответа">
+          </p>
+          <p>
+            <textarea id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь..."></textarea>
+          </p>
+          <button class="common-button" type="submit">Отправить</button>
+          <button class="close-modal" type="button" label-aria="Закрыть модальное окно"></button>
+        </form>
+        <div class="feedback-form-overlay"></div>
+      </div>
 
       <!-- Modal "Feedback" End -->
-
+      <script src="js/popup.js"></script>
     </div>
   </div>
 </body>
