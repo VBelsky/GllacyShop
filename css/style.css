@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit;
 }
 
@@ -176,6 +178,7 @@ textarea::placeholder {
   padding: 10px 14px;
   border-radius: 20px;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .site-navigation a:hover,
@@ -220,6 +223,7 @@ textarea::placeholder {
   content: "";
   position: absolute;
   display: inline-block;
+  vertical-align: middle;
   width: 100%;
   height: 10px;
   top: -10px;
@@ -340,6 +344,7 @@ textarea::placeholder {
   content: "";
   position: absolute;
   display: inline-block;
+  vertical-align: middle;
   width: 100%;
   height: 10px;
   top: -10px;
@@ -376,6 +381,7 @@ textarea::placeholder {
   border: none;
   border-radius: 30px;
   display: inline-block;
+  vertical-align: middle;
   padding: 10px 25px;
   cursor: pointer;
 }
@@ -431,6 +437,7 @@ textarea::placeholder {
   content: "";
   position: absolute;
   display: inline-block;
+  vertical-align: middle;
   width: 100%;
   height: 10px;
   top: -10px;
@@ -886,6 +893,7 @@ tr:nth-child(2) .modal-cart-item-title::before {
   max-width: 368px;
   width: 100%;
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
   margin-bottom: 15px;
   margin-right: 8px;
@@ -982,21 +990,24 @@ tr:nth-child(2) .modal-cart-item-title::before {
 
 .modal-feedback {
   display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: -240px;
+  z-index: 2;
 }
 
 .modal-feedback-show {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .feedback-form {
   padding: 20px 25px 25px;
   border-radius: 10px;
   background-color: rgb(248, 247, 244);
-  width: 478px;
-  position: fixed;
-  top: 330px;
-  left: 50%;
-  margin-left: -279px;
+  width: 480px;
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -1015,6 +1026,11 @@ tr:nth-child(2) .modal-cart-item-title::before {
   height: 100%;
   z-index: 1;
   background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.feedback-form-overlay-show {
+  display: block;
 }
 
 .feedback-form h3,
@@ -1030,6 +1046,10 @@ tr:nth-child(2) .modal-cart-item-title::before {
 .feedback-form input[type="text"] {
   max-width: 270px;
   width: 100%;
+}
+
+.required-invalid {
+  border: 2px solid #FE2D2D;
 }
 
 .close-modal {
@@ -1380,8 +1400,19 @@ tr:nth-child(2) .modal-cart-item-title::before {
   background-position: 0 0;
 }
 
+.sort-fat-content-item input[type="radio"]:checked:disabled + label::before,
+.sort-filler-item input[type="checkbox"]:checked:disabled + label::before {
+  background-image: url("../img/radio-on-disable.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 .sort-filler-item input[type="checkbox"]:disabled + label::before {
   background-image: url("../img/checkbox-off-disable.svg");
+}
+
+.sort-filler-item input[type="checkbox"]:checked:disabled + label::before {
+  background-image: url("../img/checkbox-on-disable.svg");
 }
 
 .sort-apply-button {
