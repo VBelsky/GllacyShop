@@ -43,6 +43,7 @@ close.addEventListener('click', function (evt) {
   form.classList.remove('modal-feedback-error');
 });
 
+
 overlay.addEventListener('click', function (evt) {
   evt.preventDefault();
   modal.classList.remove('modal-feedback-show');
@@ -50,10 +51,10 @@ overlay.addEventListener('click', function (evt) {
   form.classList.remove('modal-feedback-error');
 });
 
+
 form.addEventListener('submit', function (evt) {
   if (!user.value || !email.value) {
     evt.preventDefault();
-    user.focus();
     form.classList.remove('modal-feedback-error');
     form.offsetWidth = form.offsetWidth;
     form.classList.add('modal-feedback-error');

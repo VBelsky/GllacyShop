@@ -6,7 +6,7 @@
   <title>Магазин мороженого "GllacyShop"</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/styles.min.css" rel="stylesheet">
 </head>
 <body>
   <input class="slider-hidden-navigation visually-hidden" type="radio" id="product-1" name="toggle" checked>
@@ -69,7 +69,7 @@
           <span class="visually-hidden">Поиск</span>
         </button>
         <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-          <input id="search-row" type="text" name="search" placeholder="Что ищем?">
+          <input class="common-input" id="search-row" type="text" name="search" placeholder="Что ищем?">
         </form>
       </div>
 
@@ -89,10 +89,10 @@
         <div class="user-navigation-modal">
           <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
             <p>
-              <input id="login-email" type="text" name="email" placeholder="Электронная почта">
+              <input class="common-input" id="login-email" type="text" name="email" placeholder="Электронная почта">
             </p>
             <p>
-              <input id="login-password" type="password" name="password" placeholder="Пароль">
+              <input class="common-input" id="login-password" type="password" name="password" placeholder="Пароль">
             </p>
             <button class="common-button login-button" type="submit">Войти</button>
             <div class="remind-password">
@@ -253,7 +253,7 @@
               <h2 class="visually-hidden">Подписка на рассылку</h2>
               <p class="newsletter-subscription-text">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
               <p class="newsletter-subscription-field">
-                <input id="newsletter-subscription-email" type="text" name="email" placeholder="Электронная почта">
+                <input class="common-input" id="newsletter-subscription-email" type="text" name="email" placeholder="Электронная почта">
               </p>
               <button class="common-button newsletter-button" type="submit">Отправить</button>
             </form>
@@ -335,21 +335,23 @@
           <p class="copyright">Сделано в <a href="#">HTML Academy</a> &copy; 2018</p>
         </div>
       </footer>
-      
+
       <!-- Footer End -->
 
       <!-- Modal "Feedback" Start -->
       <div class="modal-feedback">
-        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post" novalidate>
           <h3>Мы обязательно вам ответим!</h3>
           <p>
-            <input id="feedback-form-name" type="text" name="name" placeholder="Как вас зовут?">
+            <input class="common-input special-input" id="feedback-form-name" type="text" name="name" placeholder="Как вас зовут?" required>
+            <span class="error" aria-live="polite">Введите имя</span>
           </p>
           <p>
-            <input id="feedback-form-email" type="text" name="email" placeholder="Ваша почта для ответа">
+            <input class="common-input special-input" id="feedback-form-email" type="email" name="email" placeholder="Ваша почта для ответа" required>
+            <span class="error" aria-live="polite">Введите Email</span>
           </p>
           <p>
-            <textarea id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь..."></textarea>
+            <textarea class="common-input common-textarea" id="feedback-form-message" type="text" name="message" placeholder="Напишите что-нибудь..."></textarea>
           </p>
           <button class="common-button" type="submit">Отправить</button>
           <button class="close-modal" type="button" label-aria="Закрыть модальное окно"></button>
@@ -358,7 +360,7 @@
       <div class="feedback-form-overlay"></div>
 
       <!-- Modal "Feedback" End -->
-      <script src="js/scripts.js"></script>
+      <script src="js/scripts.min.js"></script>
     </div>
   </div>
 </body>
