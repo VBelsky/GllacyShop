@@ -14,7 +14,6 @@ body {
   color: #ffffff;
   background-color: #849d8f;
   min-width: 940px;
-  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -503,6 +502,7 @@ tr:nth-child(2) .modal-cart-item-title::before {
   width: 11px;
   height: 11px;
   border: none;
+  cursor: pointer;
 }
 
 .cart-item-price {
@@ -1296,9 +1296,6 @@ tr:nth-child(2) .modal-cart-item-title::before {
   border-radius: 20px;
   cursor: pointer;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .sort-categories-list:hover {
@@ -1413,7 +1410,6 @@ tr:nth-child(2) .modal-cart-item-title::before {
 .sort-filler-item input[type="checkbox"]:focus + label::before {
   border-color: #663d15;
   outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
 }
 
 .sort-fat-content-item input[type="radio"]:checked + label::before,
@@ -1542,54 +1538,23 @@ tr:nth-child(2) .modal-cart-item-title::before {
   color: #000;
 }
 
-@-webkit-keyframes appearance {
-  0% {
-    -webkit-transform: scale(0, 0);
-    transform: scale(0, 0)
-  }
-  100% {
-    -webkit-transform: scale(1.0, 1.0);
-    transform: scale(1.0, 1.0);
-  }
-}
-
 @keyframes appearance {
   0% {
-    -webkit-transform: scale(0, 0);
     transform: scale(0, 0)
   }
   100% {
-    -webkit-transform: scale(1.0, 1.0);
     transform: scale(1.0, 1.0);
-  }
-}
-
-@-webkit-keyframes shake {
-  0%, 100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: rotate(1deg);
-    transform: rotate(1deg);
-  }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: rotate(-1deg);
-    transform: rotate(-1deg);
   }
 }
 
 @keyframes shake {
   0%, 100% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: rotate(1deg);
     transform: rotate(1deg);
   }
   20%, 40%, 60%, 80% {
-    -webkit-transform: rotate(-1deg);
     transform: rotate(-1deg);
   }
 }
